@@ -73,6 +73,7 @@ h2 {
     grid-area: article;
     font-size: 30px;
     align-content: unset;
+    display: flex;
 }
 
 #footer {
@@ -83,14 +84,21 @@ h2 {
     padding: 10px;
 }
 
-#articleTextPart {
+#articleText {
     width: 50%;
 }
 
-#articleImagePart {
+#articleText ul {
+    padding-right: 20px;
+    font-size: 2vw;
+}
+
+#articleImage {
     width: 50%;
 }
 
-#articleDescriptionPart {
-
+#articleImage img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
