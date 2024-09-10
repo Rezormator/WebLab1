@@ -1,0 +1,96 @@
+body {
+    display: grid;
+    grid-template-areas:
+        "header header ads"
+        "nav smallHeader ads"
+        "nav article ads"
+        "footer footer footer";
+    grid-template-columns: 100px 1fr minmax(100px, 10%);
+    grid-template-rows: 80px 50px minmax(150px, 5fr) 80px;
+    background-color: #f6f6f6;
+    height: 100vh;
+    margin: 0;
+}
+
+h2 {
+    background-color: #fbcd44;
+    border-radius: 3px;
+    display: inline;
+}
+
+.navBar {
+    padding: 15px;
+    font-size: 15px;
+}
+
+.area {
+    background-color: #ffffff;
+    border-radius: 3px;
+    margin: 3px;
+    box-shadow: 0 10px 15px rgba(220,220,220,255);
+}
+
+.scrollable {
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow: auto;
+}
+
+.image {
+    width: 90%;
+    height: auto;
+    display: inline-block;
+}
+
+#header {
+    grid-area: header;
+    align-content: center;
+    text-align: left;
+    padding: 10px;
+}
+
+#ads {
+    grid-area: ads;
+    align-content: center;
+    text-align: center;
+    overflow: clip;
+}
+
+#nav {
+    grid-area: nav;
+    text-align: left;
+}
+
+#smallHeader {
+    grid-area: smallHeader;
+    align-content: center;
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+#article {
+    grid-area: article;
+    font-size: 30px;
+    align-content: unset;
+}
+
+#footer {
+    grid-area: footer;
+    align-content: center;
+    text-align: right;
+    background-color: #000000;
+    padding: 10px;
+}
+
+#articleTextPart {
+    width: 50%;
+}
+
+#articleImagePart {
+    width: 50%;
+}
+
+#articleDescriptionPart {
+
+}
