@@ -1,39 +1,82 @@
 body {
     display: grid;
     grid-template-areas:
-        "header header ads"
-        "nav smallHeader ads"
-        "nav article ads"
+        "header header ads1"
+        "ads2 smallHeader ads1"
+        "ads2 article ads1"
         "footer footer footer";
-    grid-template-columns: 100px 1fr minmax(100px, 10%);
-    grid-template-rows: 80px 50px minmax(150px, 5fr) 80px;
+    grid-template-columns: minmax(100px, 10%) 1fr minmax(100px, 10%);
+    grid-template-rows: 80px minmax(50px, auto) auto 80px;
     background-color: #f6f6f6;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     margin: 0;
 }
 
-h2 {
-    background-color: #fbcd44;
-    border-radius: 3px;
-    display: inline;
-}
-
-.navBar {
-    padding: 15px;
-    font-size: 15px;
-}
-
-.area {
+.block {
     background-color: #ffffff;
     border-radius: 3px;
     margin: 3px;
     box-shadow: 0 10px 15px rgba(220,220,220,255);
 }
 
-.scrollable {
-    border: 1px solid #ccc;
+#header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
     padding: 10px;
-    overflow: auto;
+    position: sticky;
+    top: 0;
+    overflow: clip;
+}
+
+.yellowMassageDiv {
+    max-width: 200px;
+    max-height: 27px;
+    overflow: hidden;
+}
+
+.yellowMassage {
+    background-color: #fbcd44;
+    border-radius: 3px;
+    display: inline;
+}
+
+.right {
+    float: right;
+}
+
+.navBar {
+    max-height: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover{
+    background-color: #fbcd44;
+}
+
+.ads {
+    align-content: center;
+    text-align: center;
+}
+
+#ads1 {
+    grid-area: ads1;
+    padding-top: 80px;
+}
+
+#ads2 {
+    grid-area: ads2;
 }
 
 .image {
@@ -42,63 +85,38 @@ h2 {
     display: inline-block;
 }
 
-#header {
-    grid-area: header;
-    align-content: center;
-    text-align: left;
-    padding: 10px;
+#ads1 {
+    grid-area: ads1;
+    padding-top: 80px;
 }
 
-#ads {
-    grid-area: ads;
-    align-content: center;
-    text-align: center;
-    overflow: clip;
-}
-
-#nav {
-    grid-area: nav;
-    text-align: left;
+#ads2 {
+    grid-area: ads2;
 }
 
 #smallHeader {
     grid-area: smallHeader;
     align-content: center;
     text-align: center;
-    font-size: 2vw;
-    font-weight: bold;
 }
 
 #article {
     grid-area: article;
     font-size: 30px;
-    align-content: unset;
-    display: flex;
+    padding: 10px;
 }
 
 #footer {
     grid-area: footer;
+    background-color: #000000;
+    padding-right: 10px;
     align-content: center;
     text-align: right;
-    background-color: #000000;
-    padding: 10px;
+    overflow: hidden;
 }
 
-#articleText {
-    width: 50%;
-}
-
-#articleText ul {
-    padding-right: 20px;
-    font-size: 2vw;
-}
-
-#articleImage {
-    width: 50%;
-}
-
-#articleImage img {
-    max-width: 100%;
+.imgMap {
+    max-width: 200px;
     height: auto;
-    display: block;
+    padding-right: 0;
 }
